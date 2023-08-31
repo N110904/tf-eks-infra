@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: angular
+  name: angular
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular
+  template:
+    metadata:
+      labels:
+        app: angular
+    spec:
+      containers:
+      - image: nginx:latest
+        name: app-ui
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 80           
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-service
+spec:
+  type: LoadBalancer #NodePort
+  selector:
+    app: angular
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      #nodePort: 30200

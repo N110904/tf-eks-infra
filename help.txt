@@ -1,0 +1,40 @@
+# Terraform Initialize
+terraform init
+
+# Terraform Validate
+terraform validate
+
+# Terraform plan
+terraform plan
+
+# Terraform Apply
+terraform apply -auto-approve
+
+# Verify Outputs on the CLI or using below command
+terraform output
+-------------------------------------------------------------------------
+
+# Configure kubeconfig for kubectl
+aws eks --region <region-code> update-kubeconfig --name <cluster_name> --profile profile_name
+aws eks --region us-east-1 update-kubeconfig --name dev-demo-cluster --profile my_aws_cred
+
+# List Worker Nodes
+kubectl get nodes
+kubectl get nodes -o wide
+
+# Verify Services
+kubectl get svc
+
+
+
+
+
+
+
+##https://dev.to/aws-builders/create-a-simple-ingress-nginx-controller-on-amazon-eks-cluster-with-full-example-5ei1
+
+##https://github.com/Noura98Houssien/simple-nginx-ingress-controller/blob/master/providers.tf
+
+##MySQL RDS Database with Terraform
+https://dev.to/aws-builders/create-a-mysql-rds-database-instance-with-terraform-3oab
+https://devopslearning.medium.com/100-days-of-devops-day-21-mysql-rds-database-creation-using-terraform-278eeaff339f
